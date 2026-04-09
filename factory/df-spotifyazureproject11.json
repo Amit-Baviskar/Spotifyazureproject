@@ -1,0 +1,9 @@
+{
+	"name": "df-spotifyazureproject11",
+	"location": "eastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "621da855-fc9e-4dc4-84fa-ef07b5443edd",
+		"tenantId": "4ede7934-b14b-4e11-ba5e-e9282b0be769"
+	}
+}
