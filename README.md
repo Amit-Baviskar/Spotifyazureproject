@@ -1,14 +1,18 @@
 #  Automated Spotify Data Pipeline using Azure Data Factory, Databricks DLT, and Unity Catalog
 
----
 
 ## 1. 📋 Overview
 
+
 This project implements a complete end-to-end data engineering pipeline for Spotify streaming data using modern Azure cloud technologies. The solution demonstrates best practices in data ingestion, orchestration, and transformation using Azure Data Factory, Azure Databricks (with Unity Catalog and Delta Live Tables), and Azure SQL Database.
+
+
 
 The pipeline processes Spotify streaming history, tracks, and user activity data through a  *medallion architecture (Bronze → Silver → Gold)*, implementing incremental loading, backfill strategies, CDC (Change Data Capture), and creating analytics-ready datasets for music consumption insights.
 
+
 ## 2. 🏗️ Architecture
+
 
 - ### Data Flow Diagram
 
@@ -19,8 +23,13 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
                     Backfill Logic          Web Activity (Email)      Managed Tables             Managed Metastore
 
 
+
+
 - ### Technology Stack
 
+
+ 
+ 
  | Component	|  Technology  | 
  |---------|-------|
  | Cloud Platform | Microsoft Azure |
@@ -39,7 +48,7 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
 
 - ## Key Features
 
- - Metadata-driven pipelines using parameters and variables
+  - Metadata-driven pipelines using parameters and variables
   
  - Incremental loading with watermark-based CDC
   
@@ -57,10 +66,18 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
  
 ----
 
+
+
 ## 3. 📊 Data Model
 
+
+
 ### Medallion Architecture
+
+
    - ### 🥉 Bronze Layer (Raw Data)
+
+
 #### *Raw Parquet data stored in Storage Account*:
 
    - bronze_streaming_history - Raw user play events
@@ -69,7 +86,11 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
 
    - bronze_artists - Raw artist information
 
+
+
    - ### 🥈 Silver Layer (Cleaned Data)
+
+     
 #### *Cleaned, validated, and transformed data in Databricks (Managed Tables with Unity Catalog)*:
 
    - silver_streaming_history - Validated play records with DLT expectations
@@ -82,7 +103,11 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
 
    - silver_user- Standardized user information
 
+   - 
+
    - ### 🥇 Gold Layer (Analytics-Ready)
+
+     
 #### *Business-ready datasets optimized for analytics*:
 
   - fact_plays - Fact table for streaming events
@@ -98,7 +123,11 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
 ------
 
 
+
 ## 4. 📁 Project Structure
+
+
+
 
              Azure_Spotify_Project/
         │
@@ -141,7 +170,10 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
 -----
 
 
+
 ##  5. 🚀 Getting Started
+
+
 - Prerequisites
 - Azure Resource Group Setup
 - Installation Steps
@@ -151,16 +183,22 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
   - ADF Linked Services Configuration
   - Databricks Access Connector 
   - GitHub CI/CD Setup
+ 
+  
 ---
 
  ## 6. 📊  Installation Steps
 
+
  1. Clone the Repository
+
 
           git clone <repository-url>
           cd Azure_Spotify_Project
     
- 2. Set Up Azure SQL Database
+ 3. Set Up Azure SQL Database
+
+
 
         -- Create source tables
         CREATE TABLE streaming_history (
@@ -183,8 +221,12 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
         );
 
         INSERT INTO watermark VALUES ('streaming_history', '1900-01-01', GETDATE());
+
+
      
 3. Configure Storage Account
+
+
    Create containers:
 
     - bronze/ - Raw Parquet data
@@ -195,7 +237,11 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
 
     - config/ - Configuration files
   
+      
+  
  4. Set Up Databricks Unity Catalog
+
+
 
          CREATE CATALOG IF NOT EXISTS spotify_catalog;
          CREATE SCHEMA IF NOT EXISTS spotify_catalog.bronze;
@@ -203,20 +249,33 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
          CREATE SCHEMA IF NOT EXISTS spotify_catalog.gold;
          CREATE METASTORE IF NOT EXISTS spotify_metastore;
 
-5. Import Databricks Notebook
+
+
+4. Import Databricks Notebook
+
+
 
 Import spotify_dab.dbc to Databricks workspace and attach to cluster with Unity Catalog enabled.    
 
+
+
 --------
 
+
 ## 7. 🔧 Usage
+
+
   ### Running ADF Pipeline (DP_spotfyazureproject)
 
             az datafactory pipeline create --resource-group SpotifyRG \
                 --factory-name df-spotifyazureproject11 \
                 --name DP_spotfyazureproject
 
+                
+
   ### Pipeline Activities
+
+
 
 | Activity	|  Description  | 
  |---------|-------|
@@ -234,6 +293,9 @@ Import spotify_dab.dbc to Databricks workspace and attach to cluster with Unity 
 
 
 ## 8. 🎯 Key Features
+
+
+
 - Incremental Loading with CDC
 - Loop-Based Orchestration (ForEach)
 - Empty File Validation
@@ -244,7 +306,10 @@ Import spotify_dab.dbc to Databricks workspace and attach to cluster with Unity 
 - Metadata-Driven Pipeline
 
 
+
 ## 9. 🔐 Security & Best Practices
+
+
 
 | Area	|  Implementation  | 
  |---------|-------|
@@ -255,9 +320,15 @@ Import spotify_dab.dbc to Databricks workspace and attach to cluster with Unity 
  | Monitoring & Alerting 	| ADF Alerts + Email Alerts  | 
  |  Performance Optimization	| Auto-scaling clusters + Partitioning   | 
 
+ 
+
 ----
 
+
+
 ## 10 .🐛 Troubleshooting
+
+
 
 | Issue	|  Solution  | 
  |---------|-------|
@@ -269,9 +340,15 @@ Import spotify_dab.dbc to Databricks workspace and attach to cluster with Unity 
 | Email Alert Not Triggering	| Verify Logic App URL and permissions |
 
 
+
+
 ----
 
+
+
 ### 11. 📊 Future Enhancements
+
+
 
 - Add streaming ingestion with Azure Event Hub
 
@@ -289,9 +366,18 @@ Import spotify_dab.dbc to Databricks workspace and attach to cluster with Unity 
 
 - Add a monitoring dashboard with Azure Monitor
 
+
+
 -----
 
+
+
+
 ### 12 . 📈 Project Summary
+
+
+
+
 
 - Situation: Raw Spotify streaming data in Azure SQL Database lacked incremental tracking and analytics readiness, making real-time music consumption reporting slow and error-prone.
 
@@ -301,9 +387,18 @@ Import spotify_dab.dbc to Databricks workspace and attach to cluster with Unity 
 
 - Solution: Achieved 40% faster data processing, 100% CDC accuracy, 30% lower compute costs, and enabled real-time analytics for streaming trends and user engagement.
 
+
+
+
 ---
 
+
+
+
 ## 13 . 📊 Document Metadata
+
+
+
 
 | Property | Value |
 |----------|-------|
@@ -313,9 +408,17 @@ Import spotify_dab.dbc to Databricks workspace and attach to cluster with Unity 
 | **Status** | Production Ready |
 | **Author** | Data Engineer |
 
+
+
 ----
 
+
+
+
 ##  14 . 👤 Author
+
+
+
 Project: Automated Spotify Streaming Data Pipeline using Azure Data Factory, Databricks DLT, and Unity Catalog
 
 Technologies: Azure Data Factory | Azure Databricks (DLT, Unity Catalog) | Azure SQL Database | Azure Storage Account (ADLS Gen2) | PySpark | Python | SQL | Parquet | GitHub CI/CD | Logic Apps
@@ -325,7 +428,13 @@ Role: Data Engineer
 
 
 ----
+
+
+
  ## 15 . 📚 Additional Resources
+
+
+ 
  
 [Azure Data Factory Documentation](https://learn.microsoft.com/en-us/azure/data-factory/)
 
@@ -335,10 +444,17 @@ Role: Data Engineer
 
 [Unity Catalog Documentation](https://docs.databricks.com/aws/en/data-governance/unity-catalog)
 
+
+
 ---
 
 
+
+
+
 ## 📝 License
+
+
 
 This project is part of a data engineering portfolio demonstration.
 
