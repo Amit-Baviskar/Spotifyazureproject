@@ -8,7 +8,7 @@ Here is a **professional index/table of contents** for your Azure Spotify Projec
 
 ---
 
-## 1. 📋 Overview
+ 1.  [Overview](#Overview)  
 - Project Description
 - Business Objectives
 - Key Outcomes
@@ -129,6 +129,12 @@ Here is a **professional index/table of contents** for your Azure Spotify Projec
 - Unity Catalog Documentation
 
 ---
+##   Overview
+This project implements a complete end-to-end data engineering pipeline for Spotify streaming data using modern Azure cloud technologies. The solution demonstrates best practices in data ingestion, orchestration, and transformation using Azure Data Factory, Azure Databricks (with Unity Catalog and Delta Live Tables), and Azure SQL Database.
+
+The pipeline processes Spotify streaming history, tracks, and user activity data through a medallion architecture (Bronze → Silver → Gold), implementing incremental loading, backfill strategies, CDC (Change Data Capture), and creating analytics-ready datasets for music consumption insights.
+
+-----
 
 ## Quick Reference Table
 
