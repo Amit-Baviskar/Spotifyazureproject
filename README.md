@@ -377,15 +377,13 @@ Import spotify_dab.dbc to Databricks workspace and attach to cluster with Unity 
 
 
 
+- **Situation**: Raw Spotify streaming data in *Azure SQL Database lacked incremental tracking and analytics readiness*, making real-time music consumption reporting slow and error-prone.
 
+- **Task**: *Build a scalable automated ETL pipeline* to ingest, transform, and deliver analytics-ready datasets with CDC and backfill capabilities.
 
-- Situation: Raw Spotify streaming data in Azure SQL Database lacked incremental tracking and analytics readiness, making real-time music consumption reporting slow and error-prone.
+- **Action**: *Implemented Medallion Architecture* using Azure Data Factory with loop-based orchestration, Databricks DLT with Unity Catalog, watermark-based incremental loading, DLT Expectations for data quality, and GitHub CI/CD.
 
-- Task: Build a scalable automated ETL pipeline to ingest, transform, and deliver analytics-ready datasets with CDC and backfill capabilities.
-
-- Action: Implemented Medallion Architecture using Azure Data Factory with loop-based orchestration, Databricks DLT with Unity Catalog, watermark-based incremental loading, DLT Expectations for data quality, and GitHub CI/CD.
-
-- Solution: Achieved 40% faster data processing, 100% CDC accuracy, 30% lower compute costs, and enabled real-time analytics for streaming trends and user engagement.
+- **Solution**: *Achieved 40% faster data processing, 100% CDC accuracy, 30% lower compute costs*, and enabled real-time analytics for streaming trends and user engagement.
 
 
 
@@ -419,11 +417,11 @@ Import spotify_dab.dbc to Databricks workspace and attach to cluster with Unity 
 
 
 
-Project: Automated Spotify Streaming Data Pipeline using Azure Data Factory, Databricks DLT, and Unity Catalog
+**Project**: Automated Spotify Streaming Data Pipeline using Azure Data Factory, Databricks DLT, and Unity Catalog
 
-Technologies: Azure Data Factory | Azure Databricks (DLT, Unity Catalog) | Azure SQL Database | Azure Storage Account (ADLS Gen2) | PySpark | Python | SQL | Parquet | GitHub CI/CD | Logic Apps
+**Technologies**: Azure Data Factory | Azure Databricks (DLT, Unity Catalog) | Azure SQL Database | Azure Storage Account (ADLS Gen2) | PySpark | Python | SQL | Parquet | GitHub CI/CD | Logic Apps
 
-Role: Data Engineer
+**Role**: Data Engineer
 
 
 
@@ -431,18 +429,18 @@ Role: Data Engineer
 
 
 
- ## 15 . 📚 Additional Resources
+ ## 15 .📚 Additional Resources
 
 
  
  
-[Azure Data Factory Documentation](https://learn.microsoft.com/en-us/azure/data-factory/)
+- [Azure Data Factory Documentation](https://learn.microsoft.com/en-us/azure/data-factory/)
 
-[Azure Databricks Documentation](https://learn.microsoft.com/en-us/azure/databricks/)
+- [Azure Databricks Documentation](https://learn.microsoft.com/en-us/azure/databricks/)
 
-[Delta Live Tables Guide](https://docs.databricks.com/aws/en/ldp)
+- [Delta Live Tables Guide](https://docs.databricks.com/aws/en/ldp)
 
-[Unity Catalog Documentation](https://docs.databricks.com/aws/en/data-governance/unity-catalog)
+- [Unity Catalog Documentation](https://docs.databricks.com/aws/en/data-governance/unity-catalog)
 
 
 
