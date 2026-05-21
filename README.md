@@ -22,7 +22,7 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
 
 
 
-<img width="778" height="559" alt="Image" src="https://github.com/user-attachments/assets/cd941e46-6a07-4afa-94a4-31ac15be89ca" />
+<img width="778" height="559" alt="Image" src="https://github.com/user-attachments/assets/bacf1d27-67a8-4281-a38c-71b43b6a1054" />
 
 
 
