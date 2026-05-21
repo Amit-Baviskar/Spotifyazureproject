@@ -18,7 +18,17 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
 ## 2. 🏗️ Architecture
 
 
+- ###  Architecture Diagram
+
+
+
+<img width="778" height="559" alt="Image" src="https://github.com/user-attachments/assets/cd941e46-6a07-4afa-94a4-31ac15be89ca" />
+
+
+
 - ### Data Flow Diagram
+
+
 
       Source (Azure SQL DB) → ADF (Copy Activity) → Storage Account (Bronze/Parquet) → Databricks (Silver/Gold) → Analytics
                       ↓                        ↓                            ↓                          ↓
