@@ -48,7 +48,7 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
 
 - ## Key Features
 
-  - Metadata-driven pipelines using parameters and variables
+ - Metadata-driven pipelines using parameters and variables
   
  - Incremental loading with watermark-based CDC
   
@@ -75,7 +75,7 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
 ### Medallion Architecture
 
 
-   - ### 🥉 Bronze Layer (Raw Data)
+   ## 🥉 Bronze Layer (Raw Data)
 
 
 #### *Raw Parquet data stored in Storage Account*:
@@ -88,7 +88,7 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
 
 
 
-   - ### 🥈 Silver Layer (Cleaned Data)
+   ## 🥈 Silver Layer (Cleaned Data)
 
      
 #### *Cleaned, validated, and transformed data in Databricks (Managed Tables with Unity Catalog)*:
@@ -103,9 +103,9 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
 
    - silver_user- Standardized user information
 
-   - 
+    
 
-   - ### 🥇 Gold Layer (Analytics-Ready)
+ ## 🥇 Gold Layer (Analytics-Ready)
 
      
 #### *Business-ready datasets optimized for analytics*:
