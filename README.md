@@ -11,6 +11,10 @@ This project implements a complete end-to-end data engineering pipeline for Spot
 The pipeline processes Spotify streaming history, tracks, and user activity data through a  *medallion architecture (Bronze → Silver → Gold)*, implementing incremental loading, backfill strategies, CDC (Change Data Capture), and creating analytics-ready datasets for music consumption insights.
 
 
+
+
+
+
 ## 2. 🏗️ Architecture
 
 
@@ -47,6 +51,10 @@ The pipeline processes Spotify streaming history, tracks, and user activity data
 
 
 - ## Key Features
+
+
+
+
 
  - Metadata-driven pipelines using parameters and variables
   
